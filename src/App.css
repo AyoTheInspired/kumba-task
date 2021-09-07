@@ -6,7 +6,7 @@
 	--sht-trans: all 0.2s ease-in-out;
 }
 
-html {
+body {
 	background: linear-gradient(to right, var(--pry-clr-1), var(--pry-clr-2));
 }
 

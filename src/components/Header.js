@@ -11,7 +11,7 @@ function Header() {
 	return (
 		<Nav className="flex-btw px-3 text-white">
 			<div className="nav__left">
-				<h5 className="mb-0">Kumba</h5>
+				<h5 className="mb-0">Logo</h5>
 			</div>
 			<div
 				className={`${
@@ -57,6 +57,7 @@ const Nav = styled.nav`
 	width: 100%;
 	background: var(--pry-clr-3);
 	min-height: 50px;
+	max-height: 50px;
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
 	z-index: 100;
 
