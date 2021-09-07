@@ -9,19 +9,19 @@ function Header() {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	return (
-		<Nav className="flex-btw px-3 py-1 text-white">
+		<Nav className="flex-btw px-3 text-white">
 			<div className="nav__left">
 				<h5 className="mb-0">Kumba</h5>
 			</div>
 			<div
 				className={`${
-					sidebarOpen && "open__sidebar"
-				} nav__mid flex-btw col-lg-5 mx-auto`}>
+					sidebarOpen ? "open__sidebar" : "close__sidebar"
+				} nav__mid flex-btw col-lg-5 col-md-7 mx-auto my-auto`}>
 				<ul className="flex-btw mx-auto col mt-1">
 					{navLinks.map((link, index) => {
 						const { title, icon, path } = link;
 						return (
-							<li key={index + 1}>
+							<li key={index + 1} onClick={() => setSidebarOpen(false)}>
 								<NavLink
 									to={path}
 									className="nav__link"
@@ -56,8 +56,9 @@ const Nav = styled.nav`
 	top: 0;
 	width: 100%;
 	background: var(--pry-clr-3);
+	min-height: 50px;
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-	z-index: 50;
+	z-index: 100;
 
 	ul {
 		li {
@@ -81,28 +82,46 @@ const Nav = styled.nav`
 		}
 	}
 
+	.nav__right {
+		transition: var(--sht-trans);
+		cursor: pointer;
+
+		.sidebar__controls {
+			font-size: 20px;
+		}
+	}
+
 	@media (max-width: 768px) {
 		position: relative;
-		/* width: 100%; */
 
 		.nav__mid {
 			position: absolute;
 			top: 40px;
 			left: 0;
-			right: 0;
-			margin: 0;
-			min-height: calc(100vh - 40px);
-			background: green;
-			transform: translateX(100%);
-			opacity: 0;
-			z-index: -100;
+			width: 100vw;
+			background: blue;
+			height: calc(100vh - 42px);
+			background: var(--pry-clr-3);
+			padding: 10px 0;
 			transition: var(--sht-trans);
 
 			ul {
 				flex-direction: column;
-				height: 100%;
-				margin: 0;
+				justify-content: space-around;
+				height: 60%;
+				margin-bottom: auto;
+
+				li {
+					margin-left: auto;
+					margin-right: 40px;
+				}
 			}
+		}
+
+		.close__sidebar {
+			transform: translateX(-100%);
+			opacity: 0;
+			z-index: -999;
 		}
 
 		.open__sidebar {
