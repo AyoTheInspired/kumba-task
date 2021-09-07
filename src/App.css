@@ -1,3 +1,15 @@
+:root {
+	--pry-clr-1: #00416a;
+	--pry-clr-2: #32364e;
+	--pry-clr-3: #00416a;
+	/* ////////////// */
+	--sht-trans: all 0.2s ease-in-out;
+}
+
+html {
+	background: linear-gradient(to right, var(--pry-clr-1), var(--pry-clr-2));
+}
+
 .flexed {
 	display: flex;
 	justify-content: center;

@@ -9,12 +9,15 @@ function Header() {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	return (
-		<Nav className="flex-btw px-3 py-2">
+		<Nav className="flex-btw px-3 py-1 text-white">
 			<div className="nav__left">
 				<h5 className="mb-0">Kumba</h5>
 			</div>
-			<div className="nav__mid flex-btw col-lg-5 mx-auto">
-				<ul className="flex-btw mx-auto col">
+			<div
+				className={`${
+					sidebarOpen && "open__sidebar"
+				} nav__mid flex-btw col-lg-5 mx-auto`}>
+				<ul className="flex-btw mx-auto col mt-1">
 					{navLinks.map((link, index) => {
 						const { title, icon, path } = link;
 						return (
@@ -24,7 +27,8 @@ function Header() {
 									className="nav__link"
 									activeClassName="nav__link-active">
 									<div className="nav__link-wrap flexed">
-										{icon} <p className="nav__link-title mb-0"> {title} </p>
+										<span className="nav__icon mb-1">{icon}</span>
+										<p className="nav__title mb-0"> {title} </p>
 									</div>
 								</NavLink>
 							</li>
@@ -32,7 +36,9 @@ function Header() {
 					})}
 				</ul>
 			</div>
-			<div className="nav__right">
+			<div
+				className="nav__right flexed d-lg-none"
+				onClick={() => setSidebarOpen(!sidebarOpen)}>
 				{sidebarOpen ? (
 					<FaTimes className="sidebar__controls" />
 				) : (
@@ -49,7 +55,31 @@ const Nav = styled.nav`
 	position: sticky;
 	top: 0;
 	width: 100%;
-	background: blue;
+	background: var(--pry-clr-3);
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+	z-index: 50;
+
+	ul {
+		li {
+			list-style-type: none;
+		}
+
+		.nav__link {
+			text-decoration: none;
+		}
+
+		.nav__icon {
+			font-size: 20px;
+			color: yellow;
+		}
+
+		.nav__title {
+			color: yellow;
+			font-size: 18px;
+			margin-left: 8px;
+			font-weight: 500;
+		}
+	}
 
 	@media (max-width: 768px) {
 		position: relative;
@@ -60,19 +90,24 @@ const Nav = styled.nav`
 			top: 40px;
 			left: 0;
 			right: 0;
-			/* width: 99%; */
 			margin: 0;
-			/* overflow-x: hidden; */
-			/* height: 100%; */
 			min-height: calc(100vh - 40px);
 			background: green;
+			transform: translateX(100%);
+			opacity: 0;
+			z-index: -100;
+			transition: var(--sht-trans);
 
 			ul {
 				flex-direction: column;
 				height: 100%;
-				/* background: red; */
 				margin: 0;
 			}
+		}
+
+		.open__sidebar {
+			transform: translateX(0);
+			opacity: 1;
 		}
 	}
 `;
