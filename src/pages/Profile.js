@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import { useStateValue } from "../data-layer/StateProvider";
 
 import BottomDiv from "../components/BottomDiv";
-import UserTop from "../components/UserTop";
+import UserDetails from "../components/UserDetails";
 
 function Profile() {
 	const [{ restaurantData }] = useStateValue();
@@ -20,7 +20,7 @@ function Profile() {
 							<div className="user__top">
 								<img src="/ayo.jpg" width="" className="user__img" alt="" />
 							</div>
-							<UserTop />
+							<UserDetails />
 							<BottomDiv />
 						</UserWrap>
 					)}
@@ -34,7 +34,6 @@ export default Profile;
 
 const Section = styled.section`
 	min-height: calc(100vh - 50px);
-
 	.wait__alert {
 		font-size: 30px;
 		color: yellow;
