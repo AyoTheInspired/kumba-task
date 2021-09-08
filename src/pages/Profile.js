@@ -44,7 +44,7 @@ function Profile() {
 	return (
 		<Container>
 			<Row>
-				<Section className="flexed">
+				<Section className="flexed py-5">
 					{!restaurantData ? (
 						<p className="mb-0 wait__alert">No Data...</p>
 					) : (
@@ -53,7 +53,7 @@ function Profile() {
 								<img src="/ayo.jpg" width="100" className="user__img" alt="" />
 							</div>
 
-							<div className="user__mid mt-2 flex-btw flex-wrap col-10">
+							{/* <div className="user__mid mt-2 flex-btw flex-wrap col-10">
 								<p className="mx-auto my-1 user__name ">
 									<span className="user__tag">Name: </span> {user.name}
 								</p>
@@ -80,7 +80,7 @@ function Profile() {
 							<p className="text-center mb-0 my-2">
 								<span className="user__tag">Bio: </span>
 								{userData.about}
-							</p>
+							</p> */}
 
 							<BottomDiv />
 						</UserWrap>
@@ -99,4 +99,6 @@ const Section = styled.section`
 
 const UserWrap = styled.div`
 	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
 `;
