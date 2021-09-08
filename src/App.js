@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Orders from "./pages/Orders";
 import { useStateValue } from "./data-layer/StateProvider";
-import { initialState } from "./data-layer/reducer";
 
 function App() {
 	const [{}, dispatch] = useStateValue();

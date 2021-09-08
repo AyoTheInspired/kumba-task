@@ -3,29 +3,19 @@ import styled from "styled-components";
 import { useStateValue } from "../data-layer/StateProvider";
 
 function BottomDiv() {
-	const [{ restaurantData }, dispatch] = useStateValue();
+	const [{ restaurantData }] = useStateValue();
 	const user = restaurantData?.user;
 
 	return (
 		<Wrap className="user__bottom mt-3 py-3 flex-btw flex-wrap col-10">
 			<div className="user__likes mx-auto flex-col col">
 				<h4 className="header">Likes</h4>
-				<div className="flexed">
-					{user.likes.map((like) => (
-						<p className="mb-0"> {like} &nbsp;</p>
-					))}
-				</div>
+				<p className="flexed">{user.likes.toString()}</p>
 			</div>
 
 			<div className="user__dislikes mx-auto flex-col col">
 				<h4 className="header">Dislikes</h4>
-				<div className="flexed">
-					{user.dislikes.map((like, index) => (
-						<p key={index} className="mb-0">
-							{like} &nbsp;{" "}
-						</p>
-					))}
-				</div>
+				<p className="flexed">{user.dislikes.toString()}</p>
 			</div>
 		</Wrap>
 	);
@@ -39,7 +29,7 @@ const Wrap = styled.div`
 	}
 
 	.user__likes {
-		border-right: 1px solid red;
+		border-right: 1px solid var(--pry-clr-3);
 	}
 
 	@media (max-width: 500px) {

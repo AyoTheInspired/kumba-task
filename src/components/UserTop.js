@@ -5,7 +5,7 @@ import { useStateValue } from "../data-layer/StateProvider";
 import styled from "styled-components";
 
 function UserTop() {
-	const [{ restaurantData }, dispatch] = useStateValue();
+	const [{ restaurantData }] = useStateValue();
 	const user = restaurantData?.user;
 
 	return (
