@@ -7,7 +7,7 @@ function BottomDiv() {
 	const user = restaurantData?.user;
 
 	return (
-		<Wrap className="user__bottom mt-3 py-3 flex-btw flex-wrap col-10 bg-success">
+		<Wrap className="user__bottom mt-3 py-3 flex-btw flex-wrap col-10">
 			<div className="user__likes mx-auto flex-col col">
 				<h4 className="header">Likes</h4>
 				<div className="flexed">
