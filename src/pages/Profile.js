@@ -1,25 +1,78 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
 import { useStateValue } from "../data-layer/StateProvider";
+import { initialState } from "../data-layer/reducer";
+// import { useFetchData } from "../data-layer/fetch";
+import { GoLocation } from "react-icons/go";
 
 function Profile() {
 	const [{ restaurantData }, dispatch] = useStateValue();
-	const tempData = [];
+	const user = restaurantData;
 
-	const { name, id } = restaurantData?.user;
-	const {
-		order_id,
-		restaurant: { street, city },
-	} = restaurantData;
+	const [userData, setUserData] = useState(null);
+
+	const fetchData = async () => {
+		const response = await axios
+			.get("https://indapi.kumba.io/webdev/assignment")
+			.catch((err) => {
+				alert(err);
+			});
+		if (response && response.length !== 0) {
+			setUserData(response.data?.user);
+		}
+		// console.log(userData);
+	};
+
+	useEffect(() => {
+		fetchData();
+		// Object.entries(userData).map(([key, value]) => {
+		// 	const { name, id, address } = value;
+		// 	console.log(key);
+		// });
+	}, []);
+
+	// const { name, id, address, phone, about, likes, dislikes } = userData;
+
+	// let user = Object.entries(restaurantData?.user);
+
+	// console.log(user);
 
 	return (
 		<Container>
 			<Row>
 				<Section className="flexed">
-					<li> {name} </li>
+					{!restaurantData ? (
+						<p className="mb-0 wait__alert">No Data...</p>
+					) : (
+						<UserWrap className="flex-col p-3 col-lg-6 col-md-8 col-sm-10">
+							<div className="user__top">
+								<img src="/ayo.jpg" width="100" className="user__img" alt="" />
+							</div>
 
-					<li> {street} </li>
+							<div className="user__mid flex-btw flex-wrap bg-success col-10">
+								<p className="mx-auto my-1 user__name ">
+									<span className="user__tag">Name: </span> {userData.name}
+								</p>
+
+								<p className=" mx-auto my-1 user__id ">
+									<span className="user__tag">ID: </span> {userData.id}{" "}
+								</p>
+								{/* <div className="user__address-wrap"></div> */}
+							</div>
+							<p className="mx-auto mb-0 my-2">
+								<span className="user__tag">Phone:</span> {userData.phone}{" "}
+							</p>
+							<p className="mx-auto text-center mb-0">
+								<span className="user__tag">
+									{" "}
+									<GoLocation />{" "}
+								</span>{" "}
+								{userData.address}{" "}
+							</p>
+						</UserWrap>
+					)}
 				</Section>
 			</Row>
 		</Container>
@@ -32,6 +85,10 @@ const Section = styled.section`
 	min-height: calc(100vh - 50px);
 `;
 
-const UserWrap = styled.div``;
+const UserWrap = styled.div`
+	background: #fff;
 
-// <UserWrap className="mx-auto">the name is {item.name}</UserWrap>
+	.user__mid {
+		/* width: 100%; */
+	}
+`;
