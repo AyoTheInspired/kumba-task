@@ -6,10 +6,12 @@ import { useStateValue } from "../data-layer/StateProvider";
 import { initialState } from "../data-layer/reducer";
 // import { useFetchData } from "../data-layer/fetch";
 import { GoLocation } from "react-icons/go";
+import { FiSmartphone } from "react-icons/fi";
+import BottomDiv from "../components/BottomDiv";
 
 function Profile() {
 	const [{ restaurantData }, dispatch] = useStateValue();
-	const user = restaurantData;
+	const user = restaurantData?.user;
 
 	const [userData, setUserData] = useState(null);
 
@@ -51,26 +53,36 @@ function Profile() {
 								<img src="/ayo.jpg" width="100" className="user__img" alt="" />
 							</div>
 
-							<div className="user__mid flex-btw flex-wrap bg-success col-10">
+							<div className="user__mid mt-2 flex-btw flex-wrap col-10">
 								<p className="mx-auto my-1 user__name ">
-									<span className="user__tag">Name: </span> {userData.name}
+									<span className="user__tag">Name: </span> {user.name}
 								</p>
 
 								<p className=" mx-auto my-1 user__id ">
-									<span className="user__tag">ID: </span> {userData.id}{" "}
+									<span className="user__tag">ID: </span> {user.id}
 								</p>
-								{/* <div className="user__address-wrap"></div> */}
 							</div>
-							<p className="mx-auto mb-0 my-2">
-								<span className="user__tag">Phone:</span> {userData.phone}{" "}
-							</p>
-							<p className="mx-auto text-center mb-0">
+
+							<p className="text-center mb-0 my-2">
 								<span className="user__tag">
-									{" "}
-									<GoLocation />{" "}
-								</span>{" "}
-								{userData.address}{" "}
+									<FiSmartphone />
+								</span>
+								{user.phone}
 							</p>
+
+							<p className="text-center mb-0 my-2">
+								<span className="user__tag">
+									<GoLocation />
+								</span>
+								{userData.address}
+							</p>
+
+							<p className="text-center mb-0 my-2">
+								<span className="user__tag">Bio: </span>
+								{userData.about}
+							</p>
+
+							<BottomDiv />
 						</UserWrap>
 					)}
 				</Section>
@@ -87,8 +99,4 @@ const Section = styled.section`
 
 const UserWrap = styled.div`
 	background: #fff;
-
-	.user__mid {
-		/* width: 100%; */
-	}
 `;
