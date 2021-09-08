@@ -52,11 +52,6 @@ const Wrap = styled.div`
 	border-radius: 10px;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
-	.user__tag {
-		font-weight: bold;
-		font-size: 15px;
-	}
-
 	.user__icon {
 		font-size: 20px;
 		font-weight: bold;

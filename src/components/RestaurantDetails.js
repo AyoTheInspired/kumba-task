@@ -14,15 +14,20 @@ function RestaurantDetails() {
 				{restaurant.name}.
 			</p>
 
-			<p className="restaurant__value mb-0 my-3">
+			<p className="restaurant__value mb-0 my-2">
 				<span className="restaurant__tag">Address: </span>
 
 				{`${restaurant.street}, ${restaurant.city}, ${restaurant.state}.`}
 			</p>
 
-			<p className="restaurant__value mt-3 mb-0">
+			<p className="restaurant__value mt-2 mb-0">
 				<span className="restaurant__tag">Zipcode: </span>
 				{restaurant.zipcode}.
+			</p>
+
+			<p className="restaurant__value mt-2 mb-0">
+				<span className="restaurant__tag">Order ID: </span>
+				{restaurantData.order_id}.
 			</p>
 		</Wrap>
 	);
@@ -35,9 +40,4 @@ const Wrap = styled.div`
 	background-color: #eee;
 	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
 	border-radius: 10px;
-
-	.restaurant__tag {
-		font-weight: bold;
-		font-size: 15px;
-	}
 `;

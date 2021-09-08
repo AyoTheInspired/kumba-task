@@ -2,7 +2,6 @@
 	--pry-clr-1: #00416a;
 	--pry-clr-2: #32364e;
 	--pry-clr-3: #00416a;
-	/* ////////////// */
 	--sht-trans: all 0.2s ease-in-out;
 }
 
@@ -26,4 +25,10 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.restaurant__tag,
+.user__tag {
+	font-weight: bold;
+	font-size: 15px;
 }

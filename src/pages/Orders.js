@@ -4,9 +4,11 @@ import { Container, Row } from "react-bootstrap";
 import RestaurantDetails from "../components/RestaurantDetails";
 import { useStateValue } from "../data-layer/StateProvider";
 import UserDetails from "../components/UserDetails";
+import ItemsOrdered from "../components/ItemsOrdered";
 
 function Orders() {
 	const [{ restaurantData }] = useStateValue();
+	// console.log(restaurantData?.items);
 
 	return (
 		<Container>
@@ -18,6 +20,8 @@ function Orders() {
 						<>
 							<RestaurantDetails />
 							<UserDetails />
+							<p className="items__ordered text-center mb-3">Items Ordered</p>
+							<ItemsOrdered items={restaurantData?.items} />
 						</>
 					)}
 				</Section>
@@ -30,10 +34,15 @@ export default Orders;
 
 const Section = styled.section`
 	min-height: calc(100vh - 50px);
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+	/* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8); */
 
 	.wait__alert {
 		font-size: 30px;
+		color: yellow;
+	}
+
+	.items__ordered {
+		font-size: 25px;
 		color: yellow;
 	}
 `;
