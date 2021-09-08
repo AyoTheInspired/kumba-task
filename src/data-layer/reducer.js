@@ -1,5 +1,5 @@
 export const initialState = {
-	restaurantData: null,
+	restaurantData: "some value here",
 };
 
 export const actionTypes = {
