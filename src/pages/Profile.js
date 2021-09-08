@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
 import { useStateValue } from "../data-layer/StateProvider";
-import { initialState } from "../data-layer/reducer";
-// import { useFetchData } from "../data-layer/fetch";
-import { GoLocation } from "react-icons/go";
-import { FiSmartphone } from "react-icons/fi";
+
 import BottomDiv from "../components/BottomDiv";
 import UserTop from "../components/UserTop";
 
 function Profile() {
-	const [{ restaurantData }, dispatch] = useStateValue();
+	const [{ restaurantData }] = useStateValue();
 
 	return (
 		<Container>
