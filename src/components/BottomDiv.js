@@ -33,4 +33,18 @@ function BottomDiv() {
 
 export default BottomDiv;
 
-const Wrap = styled.div``;
+const Wrap = styled.div`
+	.header {
+		font-size: 18px;
+	}
+
+	.user__likes {
+		border-right: 1px solid red;
+	}
+
+	@media (max-width: 500px) {
+		.user__likes {
+			border-right: none;
+		}
+	}
+`;

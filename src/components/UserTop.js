@@ -10,8 +10,8 @@ function UserTop() {
 
 	return (
 		<Wrap>
-			<div className="user__mid flex-btw mx-auto flex-wrap">
-				<p className="text-center my-1 user__name col-sm-6">
+			<div className="user__mid flex-btw mx-auto col-10 flex-wrap">
+				<p className="text-center mx-auto my-1 user__name col-sm-6">
 					<span className="user__tag">Name: </span> {user.name}
 				</p>
 

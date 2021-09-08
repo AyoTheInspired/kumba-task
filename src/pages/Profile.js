@@ -38,6 +38,11 @@ export default Profile;
 
 const Section = styled.section`
 	min-height: calc(100vh - 50px);
+
+	.wait__alert {
+		font-size: 30px;
+		color: yellow;
+	}
 `;
 
 const UserWrap = styled.div`
