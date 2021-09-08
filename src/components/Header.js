@@ -92,6 +92,10 @@ const Nav = styled.nav`
 		}
 	}
 
+	.nav__link-active .nav__title {
+		border-bottom: 1px solid yellow;
+	}
+
 	@media (max-width: 768px) {
 		position: relative;
 
