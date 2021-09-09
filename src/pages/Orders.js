@@ -23,7 +23,10 @@ function Orders() {
 							<p className="items__ordered text-center mb-0">Items Ordered</p>
 							<ItemsOrdered items={restaurantData?.items} />
 
-							<Summary items={restaurantData?.items} />
+							<Summary
+								items={restaurantData?.items}
+								date={restaurantData?.createdAt}
+							/>
 						</>
 					)}
 				</Section>

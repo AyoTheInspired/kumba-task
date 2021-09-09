@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-function Summary({ items }) {
+function Summary({ items, date }) {
 	const [totals, setTotals] = useState({ totalBill: 0, totalTax: 0 });
 
 	useEffect(() => {
@@ -34,6 +34,14 @@ function Summary({ items }) {
 				<p className="mb-0 total__tag">Total Tax: </p>
 				<h5 className="total__value mb-0">
 					₹ {totals.totalBill / totals.totalTax}
+				</h5>
+			</div>
+
+			<div className="flex-btw mx-auto p-2">
+				<p className="mb-0 total__tag">Generated on: </p>
+				<h5 className="total__value mb-0">
+					{" "}
+					{JSON.stringify(new Date(Date.parse(date)))}{" "}
 				</h5>
 			</div>
 		</Wrap>
