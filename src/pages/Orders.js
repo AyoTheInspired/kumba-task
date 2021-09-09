@@ -9,7 +9,6 @@ import Summary from "../components/Summary";
 
 function Orders() {
 	const [{ restaurantData }] = useStateValue();
-	// console.log(restaurantData?.items);
 
 	return (
 		<Container>
@@ -23,7 +22,7 @@ function Orders() {
 							<UserDetails />
 							<p className="items__ordered text-center mb-0">Items Ordered</p>
 							<ItemsOrdered items={restaurantData?.items} />
-							{/* <p className="items__ordered text-center mb-0"></p> */}
+
 							<Summary items={restaurantData?.items} />
 						</>
 					)}
@@ -37,7 +36,6 @@ export default Orders;
 
 const Section = styled.section`
 	min-height: calc(100vh - 50px);
-	/* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8); */
 
 	.wait__alert {
 		font-size: 30px;

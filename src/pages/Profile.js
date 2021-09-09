@@ -48,6 +48,6 @@ const UserWrap = styled.div`
 	.user__img {
 		object-fit: contain;
 		height: 100px;
-		border-radius: 50%;
+		border-radius: 10%;
 	}
 `;
