@@ -45,6 +45,7 @@ export default Summary;
 const Wrap = styled.div`
 	background: #fff;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+	max-height: 300px;
 
 	.total__tag {
 		font-weight: bold;
