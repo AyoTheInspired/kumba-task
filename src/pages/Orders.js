@@ -5,6 +5,7 @@ import RestaurantDetails from "../components/RestaurantDetails";
 import { useStateValue } from "../data-layer/StateProvider";
 import UserDetails from "../components/UserDetails";
 import ItemsOrdered from "../components/ItemsOrdered";
+import Summary from "../components/Summary";
 
 function Orders() {
 	const [{ restaurantData }] = useStateValue();
@@ -20,8 +21,10 @@ function Orders() {
 						<>
 							<RestaurantDetails />
 							<UserDetails />
-							<p className="items__ordered text-center mb-3">Items Ordered</p>
+							<p className="items__ordered text-center mb-0">Items Ordered</p>
 							<ItemsOrdered items={restaurantData?.items} />
+							{/* <p className="items__ordered text-center mb-0"></p> */}
+							<Summary items={restaurantData?.items} />
 						</>
 					)}
 				</Section>

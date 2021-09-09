@@ -28,7 +28,8 @@ body {
 }
 
 .restaurant__tag,
-.user__tag {
+.user__tag,
+.item__tag {
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 13px;
 }
