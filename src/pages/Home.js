@@ -8,8 +8,8 @@ function Home() {
 			<Row>
 				<Section className="flexed col mx-auto ">
 					<div className="header__wrap p-3 mx-auto d-flex flex-column justify-content-center align-items-center">
-						<p className="header__top text-center">Welcome to</p>
-						<h4 className="mb-0 header__bottom text-center">
+						<p className="text-white header__top text-center">Welcome to</p>
+						<h4 className="text-white mb-0 header__bottom text-center">
 							Fast Food Station!
 						</h4>
 					</div>

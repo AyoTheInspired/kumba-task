@@ -17,7 +17,7 @@ function Summary({ items, date }) {
 	}, []);
 
 	return (
-		<Wrap className="p-4 col-lg-6 col-md-8 col-sm-10">
+		<Wrap className="p-4 mb-4 col-lg-6 col-md-8 col-sm-10">
 			<h4 className="header mb-3 text-center">Summary</h4>
 			<div className="flex-btw mx-auto p-2">
 				<p className="mb-0 total__tag">Total Items Purchased: </p>
@@ -36,14 +36,6 @@ function Summary({ items, date }) {
 					₹ {totals.totalBill / totals.totalTax}
 				</h5>
 			</div>
-
-			{/* <div className="flex-btw mx-auto p-2">
-				<p className="mb-0 total__tag">Generated on: </p>
-				<h5 className="total__value mb-0">
-					{" "}
-					{JSON.stringify(new Date(Date.parse(date)))}{" "}
-				</h5>
-			</div> */}
 		</Wrap>
 	);
 }
