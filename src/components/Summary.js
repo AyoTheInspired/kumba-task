@@ -7,12 +7,11 @@ function Summary({ items, date }) {
 	useEffect(() => {
 		let tempBill = 0;
 		let tempTax = 0;
-
 		items?.map((item) => {
 			tempBill += item.price;
 			tempTax += item.tax_pct;
 
-			setTotals({ ...totals, totalBill: tempBill, totalTax: tempTax });
+			return setTotals({ ...totals, totalBill: tempBill, totalTax: tempTax });
 		});
 	}, []);
 

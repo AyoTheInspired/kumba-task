@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { Col } from "react-bootstrap";
 
 function ItemsOrdered({ items }) {
-								console.log(Object.keys(items).length);
-
-
 	return (
 		<Wrap className="flexed flex-wrap py-3">
 			{!items ? (
