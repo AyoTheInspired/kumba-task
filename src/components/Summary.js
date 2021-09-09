@@ -37,13 +37,13 @@ function Summary({ items, date }) {
 				</h5>
 			</div>
 
-			<div className="flex-btw mx-auto p-2">
+			{/* <div className="flex-btw mx-auto p-2">
 				<p className="mb-0 total__tag">Generated on: </p>
 				<h5 className="total__value mb-0">
 					{" "}
 					{JSON.stringify(new Date(Date.parse(date)))}{" "}
 				</h5>
-			</div>
+			</div> */}
 		</Wrap>
 	);
 }
