@@ -12,7 +12,7 @@ function Profile() {
 	return (
 		<Container>
 			<Row>
-				<Section className="flexed py-5 px-4">
+				<Section className="flexed col mx-auto py-5 px-4">
 					{!restaurantData ? (
 						<p className="mb-0 wait__alert">No Data...</p>
 					) : (

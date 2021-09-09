@@ -6,7 +6,7 @@ function Home() {
 	return (
 		<Container fluid>
 			<Row>
-				<Section className="flexed col mx-auto text-white">
+				<Section className="flexed col mx-auto ">
 					<div className="header__wrap p-3 mx-auto d-flex flex-column justify-content-center align-items-center">
 						<p className="header__top text-center">Welcome to</p>
 						<h4 className="mb-0 header__bottom text-center">

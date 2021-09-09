@@ -13,7 +13,7 @@ function Orders() {
 	return (
 		<Container>
 			<Row>
-				<Section className="flex-col p-4 ">
+				<Section className="flex-col col mx-auto p-4 ">
 					{!restaurantData ? (
 						<p className="mb-0 wait__alert">No Data...</p>
 					) : (
